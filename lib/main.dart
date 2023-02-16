@@ -1,4 +1,6 @@
+import 'package:dark_souls/models/models.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'home.dart';
 
 void main() {
@@ -11,10 +13,21 @@ class DarkSouls extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Dark souls Study',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: const Home());
+      title: 'Dark souls Study',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MultiProvider(
+        providers: [
+          ChangeNotifierProvider(
+            create: (context) => SettingsTabManager(),
+          ),
+          ChangeNotifierProvider(
+            create: (context) => PlayerStatusManager(),
+          )
+        ],
+        child: const Home(),
+      ),
+    );
   }
 }
