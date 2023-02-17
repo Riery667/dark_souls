@@ -7,13 +7,16 @@ class Player {
   double currentStamina;
   double currentMana;
   String pladge = 'standart';
+  int souls;
 
-  Player(
-      {required this.name,
-      required this.maxHealth,
-      required this.maxStamina,
-      required this.maxMana,
-      required this.currentHealth,
-      required this.currentStamina,
-      required this.currentMana});
+  Player({
+    required this.name,
+    required this.maxHealth,
+    required this.maxStamina,
+    required this.maxMana,
+    required this.currentHealth,
+    required this.currentStamina,
+    required this.currentMana,
+    this.souls = 0,
+  });
 }

@@ -1,4 +1,5 @@
 import 'package:dark_souls/models/models.dart';
+import 'package:dark_souls/view/souls_view.dart';
 import 'package:dark_souls/view/status_view.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -44,16 +45,9 @@ class WorldScreen extends StatelessWidget {
             ),
             //todo: CountSoulsView
             Positioned(
-              bottom: size.height * 0.01,
-              right: size.width * 0.01,
-              height: size.height * 0.11,
-              width: size.width * 0.15,
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Container(
-                  color: Colors.black45,
-                ),
-              ),
+              bottom: size.height * 0.04,
+              right: size.width * 0.03,
+              child: const SoulsView(),
             ),
             Positioned(
               bottom: 250,
@@ -83,17 +77,43 @@ class TestChangeInBar extends StatelessWidget {
     print('rebuild');
     //VERY IMPORTANT
     final player = Provider.of<PlayerStatusManager>(context, listen: false);
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return Column(
       children: [
-        FloatingActionButton(
-          onPressed: player.increaseHP,
-          child: const Icon(Icons.add),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            FloatingActionButton(
+              onPressed: player.increaseHP,
+              child: const Icon(Icons.add),
+            ),
+            FloatingActionButton(
+              onPressed: player.damageHP,
+              child: const Icon(Icons.remove),
+            ),
+          ],
         ),
-        FloatingActionButton(
-          onPressed: player.damageHP,
-          child: const Icon(Icons.remove),
-        )
+        const SizedBox(
+          height: 40,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            FloatingActionButton(
+              onPressed: player.soulsAcquired,
+              child: const Icon(
+                Icons.add,
+                color: Colors.black,
+              ),
+            ),
+            FloatingActionButton(
+              onPressed: player.diePunishment,
+              child: const Icon(
+                Icons.remove,
+                color: Colors.black,
+              ),
+            ),
+          ],
+        ),
       ],
     );
   }

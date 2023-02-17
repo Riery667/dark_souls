@@ -7,13 +7,16 @@ class StatusView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: const [
-        PladgeView(),
-        BarView(),
-      ],
+    return Container(
+      color: Colors.black45,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: const [
+          PladgeView(),
+          BarView(),
+        ],
+      ),
     );
   }
 }

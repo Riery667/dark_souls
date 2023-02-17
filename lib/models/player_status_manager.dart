@@ -10,13 +10,15 @@ class PlayerStatusManager extends ChangeNotifier {
 
   void _init() async {
     player = Player(
-        name: 'sr. Jhon',
-        maxHealth: 58,
-        maxStamina: 50,
-        maxMana: 43,
-        currentHealth: 35,
-        currentStamina: 20,
-        currentMana: 40);
+      name: 'sr. Jhon',
+      maxHealth: 58,
+      maxStamina: 50,
+      maxMana: 43,
+      currentHealth: 35,
+      currentStamina: 20,
+      currentMana: 40,
+      souls: 5023,
+    );
   }
 
   //decrease the current health of player
@@ -40,6 +42,19 @@ class PlayerStatusManager extends ChangeNotifier {
       player.currentHealth += heal;
     }
 
+    notifyListeners();
+  }
+
+  //increase souls
+  void soulsAcquired() {
+    const soulsAcquired = 1550;
+    player.souls += soulsAcquired;
+    notifyListeners();
+  }
+
+  //simulate if player dies he loses all the souls
+  void diePunishment() {
+    player.souls = 0;
     notifyListeners();
   }
 }

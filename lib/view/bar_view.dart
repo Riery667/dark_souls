@@ -13,7 +13,7 @@ class BarView extends StatelessWidget {
         return Padding(
           padding: const EdgeInsets.fromLTRB(0, 16, 0, 16),
           child: SizedBox(
-            width: 500,
+            width: 400,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
