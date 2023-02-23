@@ -20,17 +20,17 @@ class BarView extends StatelessWidget {
               children: [
                 //Health Bar
                 StatusBar(
-                  asset: 'assets/status_hud/health_bar.png',
+                  asset: 'assets/status/health_bar.png',
                   maxStatusBar: value.player.maxHealth,
                   currentStatusBar: value.player.currentHealth,
                 ),
                 StatusBar(
-                  asset: 'assets/status_hud/stamina_bar.png',
+                  asset: 'assets/status/stamina_bar.png',
                   maxStatusBar: value.player.maxStamina,
                   currentStatusBar: value.player.currentStamina,
                 ),
                 StatusBar(
-                  asset: 'assets/status_hud/mana_bar.png',
+                  asset: 'assets/status/mana_bar.png',
                   maxStatusBar: value.player.maxMana,
                   currentStatusBar: value.player.currentMana,
                 ),

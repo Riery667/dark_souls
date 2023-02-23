@@ -21,7 +21,7 @@ class StatusBar extends StatelessWidget {
           decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage(
-                  'assets/status_hud/empty_bar.png',
+                  'assets/status/empty_bar.png',
                 ),
                 fit: BoxFit.fill),
           ),

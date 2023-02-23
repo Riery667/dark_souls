@@ -1,5 +1,6 @@
 import 'package:dark_souls/models/models.dart';
 import 'package:dark_souls/view/equipament_view.dart';
+import 'package:dark_souls/view/menu_view.dart';
 import 'package:dark_souls/view/souls_view.dart';
 import 'package:dark_souls/view/status_view.dart';
 import 'package:flutter/material.dart';
@@ -111,32 +112,24 @@ class TestChangeInBar extends StatelessWidget {
             ),
           ],
         ),
-        FloatingActionButton(onPressed: () {
-          showGeneralDialog(
-            barrierDismissible: true,
-            barrierLabel: 'menu',
-            context: context,
-            pageBuilder: (context, animation, secondaryAnimation) {
-              return Center(
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Row(
-                    children: [
-                      const SizedBox(
-                        width: 400,
-                      ),
-                      Container(
-                        color: Colors.amber,
-                        height: 100,
-                        width: 100,
-                      ),
-                    ],
+        FloatingActionButton(
+          onPressed: () {
+            showGeneralDialog(
+              barrierDismissible: true,
+              barrierLabel: 'menu',
+              context: context,
+              pageBuilder: (context, animation, secondaryAnimation) {
+                return const Center(
+                  child: SizedBox(
+                    width: 290,
+                    height: 110,
+                    child: MenuView(),
                   ),
-                ),
-              );
-            },
-          );
-        })
+                );
+              },
+            );
+          },
+        ),
       ],
     );
   }
