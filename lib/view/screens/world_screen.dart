@@ -1,4 +1,5 @@
 import 'package:dark_souls/models/models.dart';
+import 'package:dark_souls/view/equipament_view.dart';
 import 'package:dark_souls/view/souls_view.dart';
 import 'package:dark_souls/view/status_view.dart';
 import 'package:flutter/material.dart';
@@ -33,15 +34,11 @@ class WorldScreen extends StatelessWidget {
             ),
             //todo: EquipmentView
             Positioned(
-              bottom: 0,
-              height: size.height * 0.35,
-              width: size.width * 0.20,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  color: Colors.black45,
-                ),
-              ),
+              left: 50,
+              bottom: 10,
+              height: size.height * 0.38,
+              width: size.width * 0.23,
+              child: const EquipamentView(),
             ),
             //todo: CountSoulsView
             Positioned(
@@ -114,6 +111,32 @@ class TestChangeInBar extends StatelessWidget {
             ),
           ],
         ),
+        FloatingActionButton(onPressed: () {
+          showGeneralDialog(
+            barrierDismissible: true,
+            barrierLabel: 'menu',
+            context: context,
+            pageBuilder: (context, animation, secondaryAnimation) {
+              return Center(
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Row(
+                    children: [
+                      const SizedBox(
+                        width: 400,
+                      ),
+                      Container(
+                        color: Colors.amber,
+                        height: 100,
+                        width: 100,
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
+          );
+        })
       ],
     );
   }
