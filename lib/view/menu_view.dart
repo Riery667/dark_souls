@@ -1,3 +1,4 @@
+import 'package:dark_souls/view/inventory_view.dart';
 import 'package:flutter/material.dart';
 
 class MenuView extends StatelessWidget {
@@ -49,9 +50,8 @@ class MenuView extends StatelessWidget {
                         pageBuilder: (context, animation, secondaryAnimation) {
                           return Center(
                             child: Container(
-                              height: 600,
-                              width: 800,
-                              color: Colors.red.shade200,
+                              color: Colors.transparent,
+                              child: const InventoryView(),
                             ),
                           );
                         },
