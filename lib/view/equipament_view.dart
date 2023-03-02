@@ -25,7 +25,7 @@ class EquipamentView extends StatelessWidget {
                           height: 32,
                           bottom: 4,
                           child: Image.asset(
-                            'assets/dish.png',
+                            'assets/main_screen/dish.png',
                           ),
                         ),
                         Positioned(
@@ -33,7 +33,7 @@ class EquipamentView extends StatelessWidget {
                           right: -20,
                           bottom: 0,
                           child: Image.asset(
-                            'assets/MENU_Knowledge_02047.PNG',
+                            'assets/main_screen/MENU_Knowledge_02047.PNG',
                           ),
                         )
                       ],
@@ -61,7 +61,7 @@ class EquipamentView extends StatelessWidget {
                                 height: 32,
                                 bottom: 4,
                                 child: Image.asset(
-                                  'assets/dish.png',
+                                  'assets/main_screen/dish.png',
                                 ),
                               ),
                               Positioned(
@@ -69,7 +69,7 @@ class EquipamentView extends StatelessWidget {
                                 right: -20,
                                 bottom: 0,
                                 child: Image.asset(
-                                  'assets/MENU_Knowledge_04018.PNG',
+                                  'assets/main_screen/MENU_Knowledge_04018.PNG',
                                 ),
                               )
                             ],
@@ -89,7 +89,7 @@ class EquipamentView extends StatelessWidget {
                                 height: 32,
                                 bottom: 4,
                                 child: Image.asset(
-                                  'assets/dish.png',
+                                  'assets/main_screen/dish.png',
                                 ),
                               ),
                               Positioned(
@@ -97,7 +97,7 @@ class EquipamentView extends StatelessWidget {
                                 right: -20,
                                 bottom: 0,
                                 child: Image.asset(
-                                  'assets/MENU_Knowledge_00007.PNG',
+                                  'assets/main_screen/MENU_Knowledge_00007.PNG',
                                 ),
                               )
                             ],
@@ -120,7 +120,7 @@ class EquipamentView extends StatelessWidget {
                               height: 32,
                               bottom: 4,
                               child: Image.asset(
-                                'assets/dish.png',
+                                'assets/main_screen/dish.png',
                               ),
                             ),
                             Positioned(
@@ -128,7 +128,7 @@ class EquipamentView extends StatelessWidget {
                               right: -20,
                               bottom: 0,
                               child: Image.asset(
-                                'assets/MENU_Knowledge_01028.PNG',
+                                'assets/main_screen/MENU_Knowledge_01028.PNG',
                               ),
                             )
                           ],
