@@ -18,5 +18,3 @@ class InventoryManager extends ChangeNotifier {
     notifyListeners();
   }
 }
-
-enum Category { consumables, weapons, armors, rings, keyItems, souls }
