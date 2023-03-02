@@ -3,8 +3,8 @@ import 'package:dark_souls/view/menu_category_view.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class InventoryManagermentView extends StatelessWidget {
-  const InventoryManagermentView({super.key});
+class InventoryItemsView extends StatelessWidget {
+  const InventoryItemsView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,9 +36,6 @@ class InventoryManagermentView extends StatelessWidget {
                             return Container(
                               color: Colors.white,
                               height: 100,
-                              child: GridView.count(
-                                crossAxisCount: crossAxisCount,
-                              ),
                             );
                           }
                           return null;

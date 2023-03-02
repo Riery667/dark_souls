@@ -25,8 +25,7 @@ class RowOfCategoryItems extends StatelessWidget {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              inventoryManager.goToCategory(index);
-              debugPrint(inventoryManager.selectedTab.toString());
+              inventoryManager.goToTab(index);
             },
             child: Container(
               height: 50,

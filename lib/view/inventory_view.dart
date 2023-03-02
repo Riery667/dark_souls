@@ -1,5 +1,4 @@
-import 'package:dark_souls/view/menu_category_view.dart';
-import 'package:dark_souls/view/inventory_managemant_view.dart';
+import 'package:dark_souls/view/inventory_items_view.dart';
 import 'package:flutter/material.dart';
 
 class InventoryView extends StatelessWidget {
@@ -93,7 +92,7 @@ class InventoryView extends StatelessWidget {
                           SizedBox(
                             height: size.height,
                             width: size.width / 3 - 20,
-                            child: const InventoryManagermentView(),
+                            child: const InventoryItemsView(),
                           ),
                           Container(
                             color: Colors.red.shade200,
