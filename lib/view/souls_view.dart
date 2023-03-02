@@ -19,7 +19,7 @@ class SoulsView extends StatelessWidget {
                     decoration: BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage(
-                            'assets/souls_prop_bar.png',
+                            'assets/main_screen/souls_prop_bar.png',
                           ),
                           fit: BoxFit.cover),
                     ),
@@ -34,7 +34,7 @@ class SoulsView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Image.asset(
-                          'assets/souls_icon.png',
+                          'assets/main_screen/souls_icon.png',
                         ),
                         const SizedBox(
                           width: 30,

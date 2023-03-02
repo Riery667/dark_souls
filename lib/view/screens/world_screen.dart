@@ -20,7 +20,7 @@ class WorldScreen extends StatelessWidget {
               child: DecoratedBox(
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("assets/background.jpg"),
+                      image: AssetImage("assets/main_screen/background.jpg"),
                       fit: BoxFit.cover),
                 ),
               ),
