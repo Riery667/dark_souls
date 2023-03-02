@@ -1,16 +1,14 @@
-class Weapon {
-  String id;
-  String name;
-  String image;
-  String description;
+import 'package:dark_souls/models/item.dart';
+
+class Weapon extends Item {
   String skill;
   int attack;
 
   Weapon({
-    required this.id,
-    required this.name,
-    required this.image,
-    required this.description,
+    required super.id,
+    required super.name,
+    required super.image,
+    required super.description,
     required this.skill,
     required this.attack,
   });
