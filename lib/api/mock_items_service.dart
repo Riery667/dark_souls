@@ -13,10 +13,10 @@ class MockhItemsService {
         await _loadAsset('assets/sample_data/sample_consumable.json');
     final Map<String, dynamic> json = jsonDecode(dataString);
 
-    if (json['consumble'] != null) {
+    if (json['consumable'] != null) {
       final items = <Consumable>[];
       try {
-        json['consumble'].forEach((v) {
+        json['consumable'].forEach((v) {
           items.add(Consumable.fromJson(v));
         });
       } catch (e) {
