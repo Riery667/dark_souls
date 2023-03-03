@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:dark_souls/components/category_tile.dart';
 import 'package:dark_souls/models/inventory_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -18,7 +19,7 @@ class RowOfCategoryItems extends StatelessWidget {
         shrinkWrap: true,
         controller: _scrollController,
         scrollDirection: Axis.horizontal,
-        itemCount: inventoryManager.category.length,
+        itemCount: inventoryManager.categoryImage.length,
         separatorBuilder: (context, index) {
           return const Padding(padding: EdgeInsets.all(8));
         },
@@ -27,10 +28,11 @@ class RowOfCategoryItems extends StatelessWidget {
             onTap: () {
               inventoryManager.goToTab(index);
             },
-            child: Container(
-              height: 50,
-              width: 80,
-              color: inventoryManager.category[index],
+            child: SizedBox(
+              width: 100,
+              child: CategoryTile(
+                categoryimage: inventoryManager.categoryImage[index],
+              ),
             ),
           );
         },
