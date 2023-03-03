@@ -10,7 +10,18 @@ class ItemTile extends StatelessWidget {
       child: Stack(
         children: [
           const Positioned.fill(
-            top: 50,
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                    "assets/menu/rised_item.png",
+                  ),
+                ),
+              ),
+            ),
+          ),
+          const Positioned.fill(
+            top: 60,
             left: 0,
             child: DecoratedBox(
               decoration: BoxDecoration(
@@ -25,7 +36,7 @@ class ItemTile extends StatelessWidget {
           Positioned(
             bottom: 0,
             child: SizedBox(
-              height: 75,
+              height: 105,
               child: Image.asset(
                 itemImage,
               ),

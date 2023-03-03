@@ -7,24 +7,21 @@ import 'package:flutter/material.dart';
 
 //Here, will pass all the data towards menu equipament
 class InventoryManager extends ChangeNotifier {
+  bool isLoaded = false;
+  int selectedTab = 0;
+
   final List<Consumable> consumables = [];
   final List<Weapon> weapons = [];
   final List<Shield> shields = [];
   final List<Speel> speels = [];
 
   final mockService = MockhItemsService();
-  bool isLoaded = false;
-  int selectedTab = 0;
+
   List<String> categoryImage = [
     "assets/items/category/consumable.png",
     "assets/items/category/weapons.png",
     "assets/items/category/shield.png",
     "assets/items/category/speel.png"
-  ];
-
-  List<Color> category = [
-    Colors.black,
-    Colors.white,
   ];
 
   InventoryManager() {
