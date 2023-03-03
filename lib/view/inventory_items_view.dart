@@ -23,7 +23,7 @@ class InventoryItemsView extends StatelessWidget {
       Colors.yellow,
       Colors.green,
     ];
-    final manager = Provider.of<InventoryManager>(context, listen: false);
+
     return Scaffold(
       backgroundColor: Colors.transparent,
       body: LayoutBuilder(
@@ -44,32 +44,37 @@ class InventoryItemsView extends StatelessWidget {
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: GridView.builder(
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 5),
-                    itemCount: 4,
-                    itemBuilder: (context, index) {
-                      if (manager.isLoaded == true) {
-                        if (manager.selectedTab == 0) {
-                          return ItemTile(
-                              itemImage: manager.consumables[index].image);
-                        } else if (manager.selectedTab == 1) {
-                          return Container(
-                            color: colors2[index],
-                          );
-                        } else if (manager.selectedTab == 2) {
-                          return Container(
-                            color: colors[index],
-                          );
-                        } else if (manager.selectedTab == 3) {
-                          return Container(
-                            color: colors[index],
-                          );
-                        }
-                        return null;
-                      }
-                      return null;
+                  child: Consumer<InventoryManager>(
+                    builder: (context, value, child) {
+                      return GridView.builder(
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 5),
+                        itemCount: 5,
+                        itemBuilder: (context, index) {
+                          if (value.isLoaded == true) {
+                            if (value.selectedTab == 0) {
+                              return ItemTile(
+                                itemImage: value.consumables[index].image,
+                              );
+                            } else if (value.selectedTab == 1) {
+                              return ItemTile(
+                                itemImage: value.weapons[index].image,
+                              );
+                            } else if (value.selectedTab == 2) {
+                              return ItemTile(
+                                itemImage: value.shields[index].image,
+                              );
+                            } else if (value.selectedTab == 3) {
+                              return ItemTile(
+                                itemImage: value.speels[index].image,
+                              );
+                            }
+                            return null;
+                          }
+                          return null;
+                        },
+                      );
                     },
                   ),
                 ),
