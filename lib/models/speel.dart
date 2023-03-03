@@ -1,14 +1,14 @@
 import 'package:dark_souls/models/item.dart';
 
 class Speel extends Item {
-  String effect;
+  double damage;
 
   Speel(
       {required super.id,
       required super.name,
       required super.image,
       required super.description,
-      required this.effect});
+      required this.damage});
 
   factory Speel.fromJson(Map<String, dynamic> json) {
     return Speel(
@@ -16,7 +16,7 @@ class Speel extends Item {
       name: json['name'] ?? '',
       image: json['image'] ?? '',
       description: json['description'] ?? '',
-      effect: json['effect'] ?? '',
+      damage: json['damage'] ?? 0,
     );
   }
 }
