@@ -5,8 +5,8 @@ import 'package:dark_souls/models/inventory_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class RowOfCategoryItems extends StatelessWidget {
-  RowOfCategoryItems({super.key});
+class CategoryView extends StatelessWidget {
+  CategoryView({super.key});
   final _scrollController = ScrollController();
 
   @override
