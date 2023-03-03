@@ -66,6 +66,11 @@ flutter:
     - assets/status/
     - assets/menu/
     - assets/main_screen/
+    - assets/items/category/
+    - assets/items/consumable/
+    - assets/items/shield/
+    - assets/items/speel/
+    - assets/items/weapon/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
