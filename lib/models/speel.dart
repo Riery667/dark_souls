@@ -1,6 +1,6 @@
-import 'package:dark_souls/models/item.dart';
+import 'package:dark_souls/models/inventory_item.dart';
 
-class Speel extends Item {
+class Speel extends InventoryItem {
   double damage;
 
   Speel(
