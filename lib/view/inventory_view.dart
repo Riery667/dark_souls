@@ -1,5 +1,9 @@
+import 'package:dark_souls/models/inventory_manager.dart';
 import 'package:dark_souls/view/inventory_items_view.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'inventory_details_view.dart';
 
 class InventoryView extends StatelessWidget {
   const InventoryView({super.key});
@@ -94,11 +98,17 @@ class InventoryView extends StatelessWidget {
                             width: size.width / 3 - 20,
                             child: const InventoryItemsView(),
                           ),
-                          Container(
-                            color: Colors.red.shade200,
-                            height: size.height,
-                            width: size.width / 3 - 20,
-                          ),
+                          SizedBox(
+                              height: size.height,
+                              width: size.width / 3 - 20,
+                              //conumable
+                              //switch
+                              child: Consumer<InventoryManager>(
+                                builder: (context, value, child) {
+                                  return InventoryDetailsView(
+                                      item: value.selectedItem);
+                                },
+                              )),
                           Container(
                             color: Colors.red.shade200,
                             height: size.height,

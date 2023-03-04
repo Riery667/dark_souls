@@ -1,22 +1,18 @@
 import 'package:dark_souls/api/mock_items_service.dart';
-import 'package:dark_souls/models/consumable.dart';
-import 'package:dark_souls/models/shield.dart';
-import 'package:dark_souls/models/speel.dart';
-import 'package:dark_souls/models/weapon.dart';
+import 'package:dark_souls/models/models.dart';
 import 'package:flutter/material.dart';
 
 //Here, will pass all the data towards menu equipament
 class InventoryManager extends ChangeNotifier {
   bool isLoaded = false;
   int selectedTab = 0;
+  InventoryItem? selectedItem;
 
   final List<Consumable> consumables = [];
   final List<Weapon> weapons = [];
   final List<Shield> shields = [];
   final List<Speel> speels = [];
-
   final mockService = MockhItemsService();
-
   List<String> categoryImage = [
     "assets/items/category/consumable.png",
     "assets/items/category/weapons.png",
@@ -44,6 +40,11 @@ class InventoryManager extends ChangeNotifier {
 
   void goToTab(index) {
     selectedTab = index;
+    notifyListeners();
+  }
+
+  void showDetailItem(InventoryItem item) {
+    selectedItem = item;
     notifyListeners();
   }
 }

@@ -1,4 +1,6 @@
+import 'package:dark_souls/models/inventory_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ItemTile extends StatelessWidget {
   String itemImage;
@@ -6,6 +8,8 @@ class ItemTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final inventoryManager =
+        Provider.of<InventoryManager>(context, listen: false);
     return SizedBox(
       child: Stack(
         children: [

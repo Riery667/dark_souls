@@ -1,5 +1,5 @@
 import 'package:dark_souls/view/items_grid_view.dart';
-import 'package:dark_souls/view/category_view.dart';
+import 'package:dark_souls/view/category_row_view.dart';
 import 'package:flutter/material.dart';
 
 class InventoryItemsView extends StatelessWidget {
@@ -18,45 +18,11 @@ class InventoryItemsView extends StatelessWidget {
               SizedBox(
                 height: size.height * 0.15,
                 width: size.width,
-                child: Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: CategoryView(),
-                ),
+                child: CategoryRowView(),
               ),
               //todo: list of items of the selected category
-              Expanded(
-                child: Stack(
-                  children: const [
-                    Positioned.fill(
-                      child: DecoratedBox(
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            fit: BoxFit.fill,
-                            image: AssetImage(
-                              "assets/menu/inventory_background.png",
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Positioned.fill(
-                      child: DecoratedBox(
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            fit: BoxFit.fill,
-                            image: AssetImage(
-                              "assets/menu/inventory_background.png",
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(20.0),
-                      child: ItemsGridVIew(),
-                    ),
-                  ],
-                ),
+              const Expanded(
+                child: ItemsGridVIew(),
               ),
             ],
           );
