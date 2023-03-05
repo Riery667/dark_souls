@@ -1,6 +1,6 @@
 import 'package:dark_souls/models/inventory_item.dart';
 
-class Weapon extends InventoryItem {
+class Weapon extends Item {
   String skill;
   int attack;
 

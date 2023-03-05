@@ -38,7 +38,7 @@ class ItemsGridVIew extends StatelessWidget {
                     if (value.selectedTab == 0) {
                       return GestureDetector(
                         onTap: () {
-                          value.showDetailItem(value.consumables[index]);
+                          value.showConsumable(value.consumables[index]);
                         },
                         child: ItemTile(
                           itemImage: value.consumables[index].image,
@@ -49,7 +49,7 @@ class ItemsGridVIew extends StatelessWidget {
                     } else if (value.selectedTab == 1) {
                       return GestureDetector(
                         onTap: () {
-                          value.showDetailItem(value.weapons[index]);
+                          value.showWeapon(value.weapons[index]);
                         },
                         child: ItemTile(
                           itemImage: value.weapons[index].image,
@@ -60,7 +60,7 @@ class ItemsGridVIew extends StatelessWidget {
                     } else if (value.selectedTab == 2) {
                       return GestureDetector(
                         onTap: () {
-                          value.showDetailItem(value.shields[index]);
+                          value.showShield(value.shields[index]);
                         },
                         child: ItemTile(
                           itemImage: value.shields[index].image,
@@ -71,7 +71,7 @@ class ItemsGridVIew extends StatelessWidget {
                     } else if (value.selectedTab == 3) {
                       return GestureDetector(
                         onTap: () {
-                          value.showDetailItem(value.speels[index]);
+                          value.showSpeel(value.speels[index]);
                         },
                         child: ItemTile(
                           itemImage: value.speels[index].image,

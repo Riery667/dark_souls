@@ -1,19 +1,17 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
-class DetailItemTile extends StatelessWidget {
-  String itemImage;
-  String name;
-  String itemDescription;
+import 'package:dark_souls/models/models.dart';
+
+class DetailConsumableTile extends StatelessWidget {
+  Consumable item;
   static String dishImage = "assets/main_screen/dish.png";
   static String background = "assets/menu/detail_background.png";
   static String labelLine = "assets/menu/menu_line.png";
-  int expandedImageAndDescription = 9;
 
-  DetailItemTile({
+  DetailConsumableTile({
     Key? key,
-    required this.itemImage,
-    required this.name,
-    required this.itemDescription,
+    required this.item,
   }) : super(key: key);
 
   @override
@@ -49,7 +47,7 @@ class DetailItemTile extends StatelessWidget {
                               width: 15,
                             ),
                             Text(
-                              name,
+                              item.name,
                               style: const TextStyle(
                                   color: Colors.white, fontSize: 15),
                             ),
@@ -73,7 +71,7 @@ class DetailItemTile extends StatelessWidget {
                     ),
                   ),
                   Expanded(
-                    flex: expandedImageAndDescription,
+                    flex: 9,
                     child: Center(
                       child: SizedBox(
                         height: squareItemImageSize,
@@ -87,7 +85,7 @@ class DetailItemTile extends StatelessWidget {
                               ),
                             ),
                             Image.asset(
-                              itemImage,
+                              item.image,
                             ),
                           ],
                         ),
@@ -95,11 +93,11 @@ class DetailItemTile extends StatelessWidget {
                     ),
                   ),
                   Expanded(
-                    flex: expandedImageAndDescription,
+                    flex: 9,
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(4, 0, 4, 0),
                       child: Text(
-                        itemDescription,
+                        item.description,
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 15,
