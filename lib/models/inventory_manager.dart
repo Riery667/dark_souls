@@ -11,13 +11,13 @@ class InventoryManager extends ChangeNotifier {
   final List<Consumable> consumables = [];
   final List<Weapon> weapons = [];
   final List<Shield> shields = [];
-  final List<Speel> speels = [];
+  final List<Spell> spells = [];
   final mockService = MockhItemsService();
   List<String> categoryImage = [
     "assets/items/category/consumable.png",
     "assets/items/category/weapons.png",
     "assets/items/category/shield.png",
-    "assets/items/category/speel.png"
+    "assets/items/category/spell.png"
   ];
 
   InventoryManager() {
@@ -28,12 +28,12 @@ class InventoryManager extends ChangeNotifier {
     final consumablesList = await mockService.getConsumable();
     final weaponsList = await mockService.getWeapon();
     final shieldsList = await mockService.getShield();
-    final speelsList = await mockService.getSpeel();
+    final spellsList = await mockService.getSpell();
 
     consumables.addAll(consumablesList);
     weapons.addAll(weaponsList);
     shields.addAll(shieldsList);
-    speels.addAll(speelsList);
+    spells.addAll(spellsList);
     isLoaded = true;
     notifyListeners();
   }
@@ -58,7 +58,7 @@ class InventoryManager extends ChangeNotifier {
     notifyListeners();
   }
 
-  void showSpeel(Speel item) {
+  void showSpell(Spell item) {
     selectedItem = item;
     notifyListeners();
   }

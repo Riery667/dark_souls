@@ -1,37 +1,37 @@
 {
-    "speel":[
+    "spell":[
         {
             "id": "0",
             "name": "Black Flame Orb",
-            "image": "assets/items/speel/black_flame_orb.png",
+            "image": "assets/items/spell/black_flame_orb.png",
             "description": "Pyromancy discovered by grave wardens after High Lord Wolnir fell to the Abyss.\n\nHurls a black fireball.\n\nThe black flame inflicts dark damage, striking targets with weighty force.",
             "damage": 2.4
         },
         {
             "id": "1",
             "name": "Chaos Bed Vestiges",
-            "image": "assets/items/speel/chaos_bed_vestiges.png",
+            "image": "assets/items/spell/chaos_bed_vestiges.png",
             "description": "Traces of the tumultuous seedbed that birthed the beings known as Demons.\n\nHurls chaos flame that scorches vicinity.\n\nDemons born from fire bore its smoldering essence and perished soon after. Man shares this rapport with the flames to this day.",
             "damage": 3.4
         },
         {
             "id": "2",
             "name": "Power Withhin",
-            "image": "assets/items/speel/power_within.png",
+            "image": "assets/items/spell/power_within.png",
             "description": "Forbidden pyromancy amongst those who internalize flame.\n\nTemporarily boosts attack, but gradually lose HP.\n\nA pyromancer fears the flame.  However, this fear subsides once it is accepted as a substitute for strength.",
             "damage": 0.2
         },
         {
             "id": "3",
             "name": "Chaos Storm",
-            "image": "assets/items/speel/chaos_storm.png",
+            "image": "assets/items/spell/chaos_storm.png",
             "description": "Art of the Flame of Chaos, from Ancient Izalith. Erects multiple chaos fire pillars in vicinity.\n\nChaotic flame melts even great boulders, and creates a brief surge of molten lava on impact.\n\nThe all-engulfing Chaos Flame eventually formed a tumultuous seedbed, which birthed the twisted things known as Demons.",
             "damage": 1.95
         },
         {
             "id": "4",
             "name": "Profaned Flame",
-            "image": "assets/items/speel/profaned_flame.png",
+            "image": "assets/items/spell/profaned_flame.png",
             "description": "Pyromancy deriving from the Profaned Flame.\n\nEngulfs foes at range and burns them to ashes.\n\nThe Profaned Capital was consumed by fire after Yhorm the Giant became a Lord of Cinder. The fire, born of the sky, is said to have incinerated naught but human flesh.",
             "damage": 2.7
         }
