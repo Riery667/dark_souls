@@ -38,7 +38,11 @@ class ConsumableDetailItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DetailItemTile(image: item!.image);
+    return DetailItemTile(
+      itemImage: item!.image,
+      name: item!.name,
+      itemDescription: item!.description,
+    );
   }
 }
 
@@ -48,7 +52,11 @@ class WeaponDetailItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return DetailItemTile(
+      itemImage: item!.image,
+      name: item!.name,
+      itemDescription: item!.description,
+    );
   }
 }
 

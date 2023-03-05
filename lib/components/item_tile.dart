@@ -1,6 +1,4 @@
-import 'package:dark_souls/models/inventory_manager.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class ItemTile extends StatelessWidget {
   String itemImage;
@@ -8,8 +6,6 @@ class ItemTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final inventoryManager =
-        Provider.of<InventoryManager>(context, listen: false);
     return SizedBox(
       child: Stack(
         children: [
@@ -24,28 +20,25 @@ class ItemTile extends StatelessWidget {
               ),
             ),
           ),
-          const Positioned.fill(
-            top: 60,
-            left: 0,
-            child: DecoratedBox(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(
-                    "assets/main_screen/dish.png",
-                  ),
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            bottom: 0,
+          Center(
             child: SizedBox(
-              height: 105,
-              child: Image.asset(
-                itemImage,
+              height: 80,
+              width: 80,
+              child: Stack(
+                children: [
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Image.asset(
+                      "assets/main_screen/dish.png",
+                    ),
+                  ),
+                  Image.asset(
+                    itemImage,
+                  ),
+                ],
               ),
             ),
-          ),
+          )
         ],
       ),
     );
