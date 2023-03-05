@@ -4,7 +4,7 @@
             "id": "0",
             "name": "Buckler",
             "image": "assets/items/shield/buckler.png",
-            "description": "A very small round metal shield.\nIt features a large central protrusion designed for parrying attacks.",
+            "description": "A very small round metal shield.\n\nIt features a large central protrusion designed for parrying attacks.",
             "skill": "Parry",
             "defense": 49
         },
@@ -12,7 +12,7 @@
             "id": "1",
             "name": "Havel's Greatshield",
             "image": "assets/items/shield/havels_greatshield.png",
-            "description": "A tremendously solid and heavy greatshield, cut straight from a great slab of stone.\nSaid to be a relic of the legendary Havel the Rock, along with the Dragon Tooth. The shield is imbued with a special power reminiscent of Havel himself.",
+            "description": "A tremendously solid and heavy greatshield, cut straight from a great slab of stone.\n\nSaid to be a relic of the legendary Havel the Rock, along with the Dragon Tooth. The shield is imbued with a special power reminiscent of Havel himself.",
             "skill": "Stone Flesh",
             "defense": 100
         },
@@ -20,7 +20,7 @@
             "id": "2",
             "name": "Iron Round",
             "image": "assets/items/shield/iron_round_shield.png",
-            "description": "An orthodox, round small shield made from metal.\nSmall shields offer little damage absorption and stability, but they are lightweight and ideal for parrying.",
+            "description": "An orthodox, round small shield made from metal.\n\nSmall shields offer little damage absorption and stability, but they are lightweight and ideal for parrying.",
             "skill": "Parry",
             "defense": 67
         },
@@ -28,7 +28,7 @@
             "id": "3",
             "name": "Lothric Knight Greatshield",
             "image": "assets/items/shield/lothric_kinght_greatshield.png",
-            "description": "Greatshield of the renowned Lothric Knights, decorated with a holy symbol.\nThe knights who formed the High Priestess' guard carried greatshields such as these, which were granted high magic absorption through her blessing.",
+            "description": "Greatshield of the renowned Lothric Knights, decorated with a holy symbol.\n\nThe knights who formed the High Priestess' guard carried greatshields such as these, which were granted high magic absorption through her blessing.",
             "skill": "Shield Bash",
             "defense": 100
         },
@@ -36,7 +36,7 @@
             "id": "4",
             "name": "Spider Shield",
             "image": "assets/items/shield/spider_shield.png",
-            "description": "A shield bearing a large etching of a spider.\nShields of this style are commonly used by savage mountain bandits, and offer high resistance to poison.",
+            "description": "A shield bearing a large etching of a spider.\n\nShields of this style are commonly used by savage mountain bandits, and offer high resistance to poison.",
             "skill": "Weapon Skill",
             "defense": 88
         }

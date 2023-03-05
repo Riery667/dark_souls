@@ -1,7 +1,7 @@
 import 'package:dark_souls/models/inventory_item.dart';
 import 'package:flutter/material.dart';
 
-class Consumable extends InventoryItem {
+class Consumable extends Item {
   final String effect;
 
   Consumable(

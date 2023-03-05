@@ -1,6 +1,6 @@
 import 'package:dark_souls/models/inventory_item.dart';
 
-class Shield extends InventoryItem {
+class Shield extends Item {
   String skill;
   int defense;
 

@@ -1,38 +1,38 @@
 {
-    "consumable":[
+    "consumable": [
         {
             "id": "0",
             "name": "Estus Flask",
             "image": "assets/items/consumable/estus_flask.png",
-            "description": "The Undead treasure these dull green flasks. Fill with Estus at bonfires, and drink to restore HP. The journey of an Undead has always traced the bonfires, and no journey of import has been made without an Estus Flask.",
+            "description": "The Undead treasure these dull green flasks.\n\n Fill with Estus at bonfires, and drink to restore HP.\n\n The journey of an Undead has always traced the bonfires, and no journey of import has been made without an Estus Flask.",
             "effect": "Allows the player to refill some of their HP bar"
         },
         {
             "id": "1",
             "name": "Ashen Estus Flask",
             "image": "assets/items/consumable/ashen_estus_flask.png",
-            "description": "Undead treasure these dull ashen flasks. Fill with Estus at bonfires, and drink to restore FP. Quite befitting of an Unkindled, an Ashen Estus Flask turns a bonfire's heat cold.",
+            "description": "Undead treasure these dull ashen flasks.\n\n Fill with Estus at bonfires, and drink to restore FP.\n\n Quite befitting of an Unkindled, an Ashen Estus Flask turns a bonfire's heat cold.",
             "effect": "Allows the player to refill some of their FP Bar (Focus Points)."
         },
         {
             "id": "2",
             "name": "Green Blossom",
             "image": "assets/items/consumable/green_blossom.png",
-            "description": "Green weed, shaped like a flowern.\nTemporary boost to stamina recovery speed.\nThe Undead Legion of Farron are remembered for using this annual plant, normally found near clear water, to swing their mighty swords with abandon.",
+            "description": "Green weed, shaped like a flowern.\n\nTemporary boost to stamina recovery speed.\n\nThe Undead Legion of Farron are remembered for using this annual plant, normally found near clear water, to swing their mighty swords with abandon.",
             "effect": "Use to increase Stamina regeneration by +6 for 60 seconds."
         },
         {
             "id": "3",
             "name": "Dung Pie",
             "image": "assets/items/consumable/dung_pie.png",
-            "description": "Dried fecal waste material, moist on the inside.\nThrow at enemy to inflict toxin build-up, but also ups your own toxicity.\nThough the stench makes it difficult to carry on one's person, inflicting toxins on an enemy yields high damage over time. Perhaps some Undead have fond memories of waste. Or, perhaps not.",
+            "description": "Dried fecal waste material, moist on the inside.\n\nThrow at enemy to inflict toxin build-up, but also ups your own toxicity.\n\nThough the stench makes it difficult to carry on one's person, inflicting toxins on an enemy yields high damage over time. Perhaps some Undead have fond memories of waste. Or, perhaps not.",
             "effect": "Inflicts Toxic on foes foes, but also affects oneself."
         },
         {
             "id": "4",
             "name": "Chracoal Fire Resin",
             "image": "assets/items/consumable/charcoal_fire_resin.png",
-            "description": "Black charcoal-like pine resin.\nTemporarily applies fire to right-hand weapon.\nUsed in the Undead Settlement to preserve Undead bodies after dissection, and to bury them.",
+            "description": "Black charcoal-like pine resin.\n\nTemporarily applies fire to right-hand weapon.\n\nUsed in the Undead Settlement to preserve Undead bodies after dissection, and to bury them.",
             "effect": "Applies +85 fire damage to right-hand weapon for 60 seconds."
         }
     ]

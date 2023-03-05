@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class InventoryManager extends ChangeNotifier {
   bool isLoaded = false;
   int selectedTab = 0;
-  InventoryItem? selectedItem;
+  dynamic selectedItem;
 
   final List<Consumable> consumables = [];
   final List<Weapon> weapons = [];
@@ -43,7 +43,22 @@ class InventoryManager extends ChangeNotifier {
     notifyListeners();
   }
 
-  void showDetailItem(InventoryItem item) {
+  void showConsumable(Consumable item) {
+    selectedItem = item;
+    notifyListeners();
+  }
+
+  void showWeapon(Weapon item) {
+    selectedItem = item;
+    notifyListeners();
+  }
+
+  void showShield(Shield item) {
+    selectedItem = item;
+    notifyListeners();
+  }
+
+  void showSpeel(Speel item) {
     selectedItem = item;
     notifyListeners();
   }

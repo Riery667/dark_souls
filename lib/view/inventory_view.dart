@@ -1,11 +1,14 @@
-import 'package:dark_souls/models/inventory_manager.dart';
+import 'package:dark_souls/components/detail_consumable_tile.dart';
+import 'package:dark_souls/components/detail_shield_tile.dart';
+import 'package:dark_souls/components/detail_speel_tile.dart';
+import 'package:dark_souls/components/detail_weapon_tile.dart';
+import 'package:dark_souls/models/models.dart';
 import 'package:dark_souls/view/inventory_items_view.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'inventory_details_view.dart';
-
 class InventoryView extends StatelessWidget {
+  static String background = "assets/menu/inventory_background.png";
   const InventoryView({super.key});
 
   @override
@@ -99,16 +102,43 @@ class InventoryView extends StatelessWidget {
                             child: const InventoryItemsView(),
                           ),
                           SizedBox(
-                              height: size.height,
-                              width: size.width / 3 - 20,
-                              //conumable
-                              //switch
-                              child: Consumer<InventoryManager>(
-                                builder: (context, value, child) {
-                                  return InventoryDetailsView(
+                            height: size.height,
+                            width: size.width / 3 - 20,
+                            //conumable
+                            //switch
+                            child: Consumer<InventoryManager>(
+                              builder: (context, value, child) {
+                                if (value.selectedItem.runtimeType ==
+                                    Consumable) {
+                                  return DetailConsumableTile(
                                       item: value.selectedItem);
-                                },
-                              )),
+                                } else if (value.selectedItem.runtimeType ==
+                                    Weapon) {
+                                  return DetailWeaponTile(
+                                      weapon: value.selectedItem);
+                                } else if (value.selectedItem.runtimeType ==
+                                    Shield) {
+                                  return DetailShieldTile(
+                                      shield: value.selectedItem);
+                                } else if (value.selectedItem.runtimeType ==
+                                    Speel) {
+                                  return DetailSpeelTile(
+                                      speel: value.selectedItem);
+                                } else {
+                                  return Positioned.fill(
+                                    child: DecoratedBox(
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          fit: BoxFit.fill,
+                                          image: AssetImage(background),
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                }
+                              },
+                            ),
+                          ),
                           Container(
                             color: Colors.red.shade200,
                             height: size.height,
