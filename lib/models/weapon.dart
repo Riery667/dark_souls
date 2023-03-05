@@ -1,12 +1,12 @@
 import 'package:dark_souls/models/item.dart';
 
 class Weapon extends Item {
-  final String level;
+  final int level;
   final String category;
-  final String typeDamage;
-  final String costMana;
-  final String weight;
-  final String durability;
+  final String attackType;
+  final int costMana;
+  final double weight;
+  final int durability;
   final String skill;
   final int damage;
   final int strengthRequired;
@@ -21,7 +21,7 @@ class Weapon extends Item {
     required this.faithRequired,
     required this.level,
     required this.category,
-    required this.typeDamage,
+    required this.attackType,
     required this.costMana,
     required this.weight,
     required this.durability,
@@ -42,15 +42,15 @@ class Weapon extends Item {
       skill: json['skill'] ?? '',
       damage: json['damage'] ?? 0,
       category: json['category'] ?? '',
-      costMana: json['costMana'] ?? '',
+      costMana: json['costMana'] ?? 0,
       durability: json['durability'] ?? '',
       level: json['level'] ?? '',
-      typeDamage: json['typeDamage'] ?? '',
-      weight: json['weight'] ?? '',
-      strengthRequired: json['strengthRequired'] ?? '',
-      dexterityRequired: json['dexterityRequired'] ?? '',
-      inteligenceRequired: json['inteligenceRequired'] ?? '',
-      faithRequired: json['faithRequired'] ?? '',
+      attackType: json['attackType'] ?? '',
+      weight: json['weight'] ?? 0,
+      strengthRequired: json['strengthRequired'] ?? 0,
+      dexterityRequired: json['dexterityRequired'] ?? 0,
+      inteligenceRequired: json['inteligenceRequired'] ?? 0,
+      faithRequired: json['faithRequired'] ?? 0,
     );
   }
 }

@@ -5,35 +5,65 @@
             "name": "Black Flame Orb",
             "image": "assets/items/spell/black_flame_orb.png",
             "description": "Pyromancy discovered by grave wardens after High Lord Wolnir fell to the Abyss.\n\nHurls a black fireball.\n\nThe black flame inflicts dark damage, striking targets with weighty force.",
-            "damage": 2.4
+            "damage": 2.4,
+            "buff": null,
+            "effect": null,
+            "manaCost": 22,
+            "slotsUsed": 1,
+            "inteligenceRequired": 20,
+            "faithRequired": 20
         },
         {
             "id": "1",
             "name": "Chaos Bed Vestiges",
             "image": "assets/items/spell/chaos_bed_vestiges.png",
             "description": "Traces of the tumultuous seedbed that birthed the beings known as Demons.\n\nHurls chaos flame that scorches vicinity.\n\nDemons born from fire bore its smoldering essence and perished soon after. Man shares this rapport with the flames to this day.",
-            "damage": 3.4
+            "damage": 3.4,
+            "buff": 0,
+            "effect": "",
+            "manaCost": 35,
+            "slotsUsed": 2,
+            "inteligenceRequired": 20,
+            "faithRequired": 10
         },
         {
             "id": "2",
             "name": "Power Withhin",
             "image": "assets/items/spell/power_within.png",
             "description": "Forbidden pyromancy amongst those who internalize flame.\n\nTemporarily boosts attack, but gradually lose HP.\n\nA pyromancer fears the flame.  However, this fear subsides once it is accepted as a substitute for strength.",
-            "damage": 0.2
+            "damage": null,
+            "buff": 0.20,
+            "effect": "",
+            "manaCost": 30,
+            "slotsUsed": 1,
+            "inteligenceRequired": 20,
+            "faithRequired": 10
         },
         {
             "id": "3",
             "name": "Chaos Storm",
             "image": "assets/items/spell/chaos_storm.png",
             "description": "Art of the Flame of Chaos, from Ancient Izalith. Erects multiple chaos fire pillars in vicinity.\n\nChaotic flame melts even great boulders, and creates a brief surge of molten lava on impact.\n\nThe all-engulfing Chaos Flame eventually formed a tumultuous seedbed, which birthed the twisted things known as Demons.",
-            "damage": 1.95
+            "damage": 1.95,
+            "buff": 0,
+            "effect": "",
+            "manaCost": 40,
+            "slotsUsed": 1,
+            "inteligenceRequired": 0,
+            "faithRequired": 0
         },
         {
             "id": "4",
             "name": "Profaned Flame",
             "image": "assets/items/spell/profaned_flame.png",
             "description": "Pyromancy deriving from the Profaned Flame.\n\nEngulfs foes at range and burns them to ashes.\n\nThe Profaned Capital was consumed by fire after Yhorm the Giant became a Lord of Cinder. The fire, born of the sky, is said to have incinerated naught but human flesh.",
-            "damage": 2.7
+            "damage": 2.7,
+            "buff": 0,
+            "effect": "",
+            "manaCost": 30,
+            "slotsUsed": 1,
+            "inteligenceRequired": 25,
+            "faithRequired": 0
         }
         
     ]
