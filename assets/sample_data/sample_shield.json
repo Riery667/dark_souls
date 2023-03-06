@@ -6,7 +6,8 @@
             "image": "assets/items/shield/buckler.png",
             "description": "A very small round metal shield.\n\nIt features a large central protrusion designed for parrying attacks.",
             "skill": "Parry",
-            "defense": 49
+            "defense": 49.0,
+            "estability": 33.0
         },
         {
             "id": "1",
@@ -14,7 +15,8 @@
             "image": "assets/items/shield/havels_greatshield.png",
             "description": "A tremendously solid and heavy greatshield, cut straight from a great slab of stone.\n\nSaid to be a relic of the legendary Havel the Rock, along with the Dragon Tooth. The shield is imbued with a special power reminiscent of Havel himself.",
             "skill": "Stone Flesh",
-            "defense": 100
+            "defense": 100.0,
+            "estability": 75.0
         },
         {
             "id": "2",
@@ -22,7 +24,8 @@
             "image": "assets/items/shield/iron_round_shield.png",
             "description": "An orthodox, round small shield made from metal.\n\nSmall shields offer little damage absorption and stability, but they are lightweight and ideal for parrying.",
             "skill": "Parry",
-            "defense": 67
+            "defense": 67.0,
+            "estability": 55.0
         },
         {
             "id": "3",
@@ -30,7 +33,8 @@
             "image": "assets/items/shield/lothric_kinght_greatshield.png",
             "description": "Greatshield of the renowned Lothric Knights, decorated with a holy symbol.\n\nThe knights who formed the High Priestess' guard carried greatshields such as these, which were granted high magic absorption through her blessing.",
             "skill": "Shield Bash",
-            "defense": 100
+            "defense": 100.0,
+            "estability": 140.0
         },
         {
             "id": "4",
@@ -38,7 +42,8 @@
             "image": "assets/items/shield/spider_shield.png",
             "description": "A shield bearing a large etching of a spider.\n\nShields of this style are commonly used by savage mountain bandits, and offer high resistance to poison.",
             "skill": "Weapon Skill",
-            "defense": 88
+            "defense": 88.0,
+            "estability": 75.0
         }
     ]
 }

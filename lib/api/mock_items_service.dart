@@ -72,20 +72,20 @@ class MockhItemsService {
     }
   }
 
-  //create a list of Speel from Json
-  Future<List<Speel>> getSpeel() async {
+  //create a list of Spell from Json
+  Future<List<Spell>> getSpell() async {
     await Future.delayed(const Duration(milliseconds: 0));
-    final dataString = await _loadAsset('assets/sample_data/sample_speel.json');
+    final dataString = await _loadAsset('assets/sample_data/sample_spell.json');
     final Map<String, dynamic> json = jsonDecode(dataString);
 
-    if (json['speel'] != null) {
-      final items = <Speel>[];
+    if (json['spell'] != null) {
+      final items = <Spell>[];
       try {
-        json['speel'].forEach((v) {
-          items.add(Speel.fromJson(v));
+        json['spell'].forEach((v) {
+          items.add(Spell.fromJson(v));
         });
       } catch (e) {
-        debugPrint('Speel Error to convertion from Json');
+        debugPrint('Spell Error to convertion from Json');
       }
       return items;
     } else {

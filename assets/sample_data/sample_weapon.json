@@ -6,7 +6,17 @@
             "image": "assets/items/weapon/uchigatana.png",
             "description": "A unique katana characterized by the fine craftsmanship of an eastern land where it was forged.\n\nThe finely-sharpened blade cuts flesh like butter and causes bleeding, but breaks easily as a result.",
             "skill": "Hold",
-            "attack": 115
+            "damage": 115,
+            "category": "Katana",
+            "costMana": 17,
+            "durability": 35,
+            "level": 0,
+            "attackType": "Slash",
+            "weight": 5.5,
+            "strengthRequired": 11,
+            "dexterityRequired": 16,
+            "inteligenceRequired": 0,
+            "faithRequired": 0
         },
         {
             "id": "1",
@@ -14,31 +24,71 @@
             "image": "assets/items/weapon/greatsword.png",
             "description": "This ultra greatsword, with its thick blade, is one of the heaviest of its kind.\n\nHighly destructive if intolerably heavy.\n\nThere would appear to be some credence to the rumors that this sword tested the true limits of human strength.",
             "skill": "Stomp",
-            "attack": 159
+            "damage": 159,
+            "category": "Ultra Greastsword",
+            "costMana": 10,
+            "durability": 100,
+            "level": 0,
+            "attackType": "Slash",
+            "weight": 20.0,
+            "strengthRequired": 28,
+            "dexterityRequired": 10,
+            "inteligenceRequired": 0,
+            "faithRequired": 0
         },
         {
             "id": "2",
             "name": "Bandit's Knife",
             "image": "assets/items/weapon/bandits_knife.png",
-            "description": "A wide single-edged shortsword.\n\nPrimarily a slicing weapon, but its blade is crafted to cause bleeding, making it a favorite of lowly thieves and bandits.",
+            "description": "A wide single-edged shortsword.\n\nPrimarily a slicing weapon, but its blade is crafted to ause bleeding, making it a favorite of lowly thieves and bandits.",
             "skill": "Quickstep",
-            "attack": 79
+            "damage": 79,
+            "category": "Dagger",
+            "costMana": 5,
+            "durability": 50,
+            "level": 0,
+            "attackType": "Slash",
+            "weight": 1.5,
+            "strengthRequired": 6,
+            "dexterityRequired": 12,
+            "inteligenceRequired": 0,
+            "faithRequired": 0
         },
         {
             "id": "3",
             "name": "Wolf Knight's Greatsword",
             "image": "assets/items/weapon/wolf_knights_greatsword.png",
-            "description": "Greatsword of a knight tainted by the dark of the Abyss, and master of the wolf's blood of Farron.\n\nThe wolf knight was the first Abyss Watcher, and his sword is more punishing against creations of the abyss.",
+            "description": "Greatsword of a knight tainted by the dark of the Abyss, and master of the wolf's blood of Farron.\n\nThe wolf knight was the first Abyss Watcher, and his sword is more punishing against creations of he abyss.",
             "skill": "Wolf Sword",
-            "attack": 139
+            "damage": 139,
+            "category": "Greastsword",
+            "costMana": 19,
+            "durability": 95,
+            "level": 0,
+            "attackType": "Standard",
+            "weight": 11.5,
+            "strengthRequired": 24,
+            "dexterityRequired": 18,
+            "inteligenceRequired": 0,
+            "faithRequired": 0
         },
         {
             "id": "4",
             "name": "Moonlight Greatsword",
             "image": "assets/items/weapon/moonlight_greatsword.png",
-            "description": "Legendary dragon weapon associated with Seath the paledrake.\n\nCharge strong attack to its limit to unleash moonlight wave.\n\nOceiros, the Consumed King, was infatuated with the search for moonlight, but in the end, it never revealed itself to him.",
+            "description": "Legendary dragon weapon associated with Seath the paledrake.\n\nCharge strong damage to its limit to unleash moonlight wave.\n\nOceiros, the Consumed King, was infatuated with the search for moonlight, ut in the end, it never revealed itself to him.",
             "skill": "Moonlight Vortex",
-            "attack": 69
+            "damage": 69,
+            "category": "Greastsword",
+            "costMana": 18,
+            "durability": 75,
+            "level": 0,
+            "attackType": "Standard",
+            "weight": 10.5,
+            "strengthRequired": 16,
+            "dexterityRequired": 11,
+            "inteligenceRequired": 26,
+            "faithRequired": 0
         }
     ]
 }

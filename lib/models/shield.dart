@@ -1,8 +1,9 @@
-import 'package:dark_souls/models/inventory_item.dart';
+import 'package:dark_souls/models/item.dart';
 
 class Shield extends Item {
   String skill;
-  int defense;
+  double defense;
+  double estability;
 
   Shield(
       {required super.id,
@@ -10,7 +11,8 @@ class Shield extends Item {
       required super.image,
       required super.description,
       required this.skill,
-      required this.defense});
+      required this.defense,
+      required this.estability});
 
   factory Shield.fromJson(Map<String, dynamic> json) {
     return Shield(
@@ -20,6 +22,7 @@ class Shield extends Item {
       description: json['description'] ?? '',
       skill: json['skill'] ?? '',
       defense: json['defense'] ?? 0,
+      estability: json['estability'] ?? 0,
     );
   }
 }

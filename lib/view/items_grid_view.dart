@@ -67,14 +67,14 @@ class ItemsGridVIew extends StatelessWidget {
                         ),
                       );
 
-                      //SPEELS
+                      //SPELLS
                     } else if (value.selectedTab == 3) {
                       return GestureDetector(
                         onTap: () {
-                          value.showSpeel(value.speels[index]);
+                          value.showSpell(value.spells[index]);
                         },
                         child: ItemTile(
-                          itemImage: value.speels[index].image,
+                          itemImage: value.spells[index].image,
                         ),
                       );
                     }

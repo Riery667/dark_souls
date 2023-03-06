@@ -1,4 +1,4 @@
-import 'package:dark_souls/models/inventory_item.dart';
+import 'package:dark_souls/models/item.dart';
 import 'package:flutter/material.dart';
 
 class Consumable extends Item {

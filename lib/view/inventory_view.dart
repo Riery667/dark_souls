@@ -2,7 +2,9 @@ import 'package:dark_souls/components/detail_consumable_tile.dart';
 import 'package:dark_souls/components/detail_shield_tile.dart';
 import 'package:dark_souls/components/detail_speel_tile.dart';
 import 'package:dark_souls/components/detail_weapon_tile.dart';
+import 'package:dark_souls/icons_assets.dart';
 import 'package:dark_souls/models/models.dart';
+import 'package:dark_souls/models/spell.dart';
 import 'package:dark_souls/view/inventory_items_view.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -115,15 +117,16 @@ class InventoryView extends StatelessWidget {
                                 } else if (value.selectedItem.runtimeType ==
                                     Weapon) {
                                   return DetailWeaponTile(
-                                      weapon: value.selectedItem);
+                                    weapon: value.selectedItem,
+                                  );
                                 } else if (value.selectedItem.runtimeType ==
                                     Shield) {
                                   return DetailShieldTile(
                                       shield: value.selectedItem);
                                 } else if (value.selectedItem.runtimeType ==
-                                    Speel) {
-                                  return DetailSpeelTile(
-                                      speel: value.selectedItem);
+                                    Spell) {
+                                  return DetailSpellTile(
+                                      spell: value.selectedItem);
                                 } else {
                                   return Positioned.fill(
                                     child: DecoratedBox(
