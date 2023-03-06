@@ -15,4 +15,5 @@ class IconsAssets {
   static const faith = "assets/menu/faith.png";
   static const defense = "assets/menu/defense_icon.png";
   static const stability = "assets/menu/stability_icon.png";
+  static const slots = "assets/menu/slots.png";
 }

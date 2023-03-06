@@ -1,5 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:dark_souls/components/atribute_required_tile.dart';
+import 'package:dark_souls/components/atribute_required_weapon_tile.dart';
 import 'package:flutter/material.dart';
 
 import 'package:dark_souls/components/icon_text_item.dart';
@@ -126,7 +126,7 @@ class DetailWeaponTile extends StatelessWidget {
                       ),
                       Expanded(
                         flex: 2,
-                        child: AttributeRequiredTile(
+                        child: AttributeRequiredWeaponTile(
                           weapon: weapon,
                         ),
                       )

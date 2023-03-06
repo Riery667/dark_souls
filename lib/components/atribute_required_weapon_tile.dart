@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 
 import '../models/weapon.dart';
 
-class AttributeRequiredTile extends StatelessWidget {
+class AttributeRequiredWeaponTile extends StatelessWidget {
   final Weapon weapon;
   static String line = "assets/menu/menu_line.png";
-  const AttributeRequiredTile({super.key, required this.weapon});
+  const AttributeRequiredWeaponTile({super.key, required this.weapon});
 
   @override
   Widget build(BuildContext context) {
@@ -25,21 +25,17 @@ class AttributeRequiredTile extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Column(
+            Row(
               children: [
-                Row(
-                  children: [
-                    Image.asset(
-                      IconsAssets.strength,
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      weapon.strengthRequired.toString(),
-                      style: TextStyle(color: Colors.orange[100]),
-                    ),
-                  ],
+                Image.asset(
+                  IconsAssets.strength,
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  weapon.strengthRequired.toString(),
+                  style: TextStyle(color: Colors.orange[100]),
                 ),
               ],
             ),
