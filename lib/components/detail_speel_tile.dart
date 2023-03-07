@@ -3,6 +3,9 @@ import 'package:dark_souls/components/icon_text_item.dart';
 import 'package:dark_souls/icons_assets.dart';
 import 'package:dark_souls/models/spell.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../models/player_status_manager.dart';
 
 class DetailSpellTile extends StatelessWidget {
   final Spell spell;
@@ -13,6 +16,8 @@ class DetailSpellTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final playerStatusManager =
+        Provider.of<PlayerStatusManager>(context, listen: false);
     return Stack(
       children: [
         Positioned.fill(
@@ -104,6 +109,11 @@ class DetailSpellTile extends StatelessWidget {
                         flex: 2,
                         child: AttributeRequiredSpellTile(
                           spell: spell,
+                          hasFthRequiriment: playerStatusManager.player.faith >
+                              spell.faithRequired,
+                          hasIntRequiriment:
+                              playerStatusManager.player.inteligence >
+                                  spell.inteligenceRequired,
                         ),
                       )
                     ],
