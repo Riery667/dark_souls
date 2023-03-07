@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 
 class PlayerStatusManager extends ChangeNotifier {
   late Player player;
+  static const initialHP = 403.0;
+  static const vigorIncreseHP = 20;
+  static const initialCountForVigor = 20;
 
   PlayerStatusManager() {
     _init();
@@ -11,14 +14,26 @@ class PlayerStatusManager extends ChangeNotifier {
   void _init() async {
     player = Player(
       name: 'sr. Jhon',
-      maxHealth: 58,
+      level: 48,
+      vigor: 17,
+      attunement: 10,
+      endurence: 16,
+      vitality: 20,
+      strength: 24,
+      dexterity: 21,
+      inteligence: 10,
+      faith: 9,
+      luck: 10,
+      maxHealth: initialHP,
       maxStamina: 50,
       maxMana: 43,
-      currentHealth: 35,
+      currentHealth: 30,
       currentStamina: 20,
       currentMana: 40,
       souls: 5023,
     );
+
+    player.maxHealth += player.vigor * (vigorIncreseHP - initialCountForVigor);
   }
 
   //decrease the current health of player

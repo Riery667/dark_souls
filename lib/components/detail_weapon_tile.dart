@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:dark_souls/components/icon_text_item.dart';
 import 'package:dark_souls/icons_assets.dart';
 import 'package:dark_souls/models/models.dart';
+import 'package:provider/provider.dart';
 
 class DetailWeaponTile extends StatelessWidget {
   final Weapon weapon;
@@ -20,6 +21,8 @@ class DetailWeaponTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final playerStatusManager =
+        Provider.of<PlayerStatusManager>(context, listen: false);
     return Stack(
       children: [
         Positioned.fill(
@@ -128,6 +131,17 @@ class DetailWeaponTile extends StatelessWidget {
                         flex: 2,
                         child: AttributeRequiredWeaponTile(
                           weapon: weapon,
+                          hasStrRequiriment:
+                              playerStatusManager.player.strength >
+                                  weapon.strengthRequired,
+                          hasDexRequiriment:
+                              playerStatusManager.player.dexterity >
+                                  weapon.dexterityRequired,
+                          hasFthRequiriment:
+                              playerStatusManager.player.inteligence >
+                                  weapon.inteligenceRequired,
+                          hasIntRequiriment: playerStatusManager.player.faith >
+                              weapon.faithRequired,
                         ),
                       )
                     ],

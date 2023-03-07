@@ -1,12 +1,26 @@
-import 'package:dark_souls/icons_assets.dart';
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+
+import 'package:dark_souls/icons_assets.dart';
 
 import '../models/weapon.dart';
 
 class AttributeRequiredWeaponTile extends StatelessWidget {
   final Weapon weapon;
+  final bool hasStrRequiriment;
+  final bool hasDexRequiriment;
+  final bool hasIntRequiriment;
+  final bool hasFthRequiriment;
+
   static String line = "assets/menu/menu_line.png";
-  const AttributeRequiredWeaponTile({super.key, required this.weapon});
+  const AttributeRequiredWeaponTile({
+    Key? key,
+    required this.weapon,
+    required this.hasStrRequiriment,
+    required this.hasDexRequiriment,
+    required this.hasIntRequiriment,
+    required this.hasFthRequiriment,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +49,10 @@ class AttributeRequiredWeaponTile extends StatelessWidget {
                 ),
                 Text(
                   weapon.strengthRequired.toString(),
-                  style: TextStyle(color: Colors.orange[100]),
+                  style: TextStyle(
+                      color: hasStrRequiriment
+                          ? Colors.orange[100]
+                          : Colors.red[700]),
                 ),
               ],
             ),
@@ -49,7 +66,10 @@ class AttributeRequiredWeaponTile extends StatelessWidget {
                 ),
                 Text(
                   weapon.dexterityRequired.toString(),
-                  style: TextStyle(color: Colors.orange[100]),
+                  style: TextStyle(
+                      color: hasDexRequiriment
+                          ? Colors.orange[100]
+                          : Colors.red[700]),
                 ),
               ],
             ),
@@ -63,7 +83,10 @@ class AttributeRequiredWeaponTile extends StatelessWidget {
                 ),
                 Text(
                   weapon.inteligenceRequired.toString(),
-                  style: TextStyle(color: Colors.orange[100]),
+                  style: TextStyle(
+                      color: hasIntRequiriment
+                          ? Colors.orange[100]
+                          : Colors.red[700]),
                 ),
               ],
             ),
@@ -77,7 +100,10 @@ class AttributeRequiredWeaponTile extends StatelessWidget {
                 ),
                 Text(
                   weapon.faithRequired.toString(),
-                  style: TextStyle(color: Colors.orange[100]),
+                  style: TextStyle(
+                      color: hasFthRequiriment
+                          ? Colors.orange[100]
+                          : Colors.red[700]),
                 ),
               ],
             ),

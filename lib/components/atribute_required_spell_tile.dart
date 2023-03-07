@@ -5,7 +5,13 @@ import 'package:flutter/material.dart';
 class AttributeRequiredSpellTile extends StatelessWidget {
   final Spell spell;
   static String line = "assets/menu/menu_line.png";
-  const AttributeRequiredSpellTile({super.key, required this.spell});
+  final bool hasIntRequiriment;
+  final bool hasFthRequiriment;
+  const AttributeRequiredSpellTile(
+      {super.key,
+      required this.spell,
+      required this.hasIntRequiriment,
+      required this.hasFthRequiriment});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +40,10 @@ class AttributeRequiredSpellTile extends StatelessWidget {
                 ),
                 Text(
                   spell.inteligenceRequired.toString(),
-                  style: TextStyle(color: Colors.orange[100]),
+                  style: TextStyle(
+                      color: hasIntRequiriment
+                          ? Colors.orange[100]
+                          : Colors.red[700]),
                 ),
               ],
             ),
@@ -48,7 +57,10 @@ class AttributeRequiredSpellTile extends StatelessWidget {
                 ),
                 Text(
                   spell.faithRequired.toString(),
-                  style: TextStyle(color: Colors.orange[100]),
+                  style: TextStyle(
+                      color: hasFthRequiriment
+                          ? Colors.orange[100]
+                          : Colors.red[700]),
                 ),
               ],
             )

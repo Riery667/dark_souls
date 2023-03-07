@@ -9,6 +9,8 @@ import 'package:dark_souls/view/inventory_items_view.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'inventory_status_view.dart';
+
 class InventoryView extends StatelessWidget {
   static String background = "assets/menu/inventory_background.png";
   const InventoryView({super.key});
@@ -142,10 +144,10 @@ class InventoryView extends StatelessWidget {
                               },
                             ),
                           ),
-                          Container(
-                            color: Colors.red.shade200,
+                          SizedBox(
                             height: size.height,
                             width: size.width / 3 - 20,
+                            child: const InventoryStatusView(),
                           ),
                         ],
                       ),
