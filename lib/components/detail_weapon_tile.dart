@@ -137,11 +137,11 @@ class DetailWeaponTile extends StatelessWidget {
                           hasDexRequiriment:
                               playerStatusManager.player.dexterity >
                                   weapon.dexterityRequired,
-                          hasFthRequiriment:
+                          hasFthRequiriment: playerStatusManager.player.faith >
+                              weapon.faithRequired,
+                          hasIntRequiriment:
                               playerStatusManager.player.inteligence >
                                   weapon.inteligenceRequired,
-                          hasIntRequiriment: playerStatusManager.player.faith >
-                              weapon.faithRequired,
                         ),
                       )
                     ],
