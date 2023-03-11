@@ -1,164 +1,130 @@
+import 'package:dark_souls/components/detail_consumable_tile.dart';
+import 'package:dark_souls/models/consumable.dart';
+import 'package:dark_souls/models/inventory_manager.dart';
+import 'package:dark_souls/view/inventory_status_view.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'equipament_items_view.dart';
 
 class EquipamentView extends StatelessWidget {
+  static String background = "assets/menu/inventory_background.png";
   const EquipamentView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, BoxConstraints bc) {
-        final size = bc.biggest;
-        return Material(
-          color: Colors.transparent,
-          child: Stack(
-            children: [
-              Row(
+    return Scaffold(
+      backgroundColor: Colors.transparent,
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Expanded(
+              child: Stack(
                 children: [
-                  //todo: leftHandView
                   Container(
-                    height: 100,
-                    width: 80,
-                    color: Colors.black54,
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          height: 32,
-                          bottom: 4,
-                          child: Image.asset(
-                            'assets/main_screen/dish.png',
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage(
+                            'assets/menu/menu_top_banner.png',
                           ),
-                        ),
-                        Positioned(
-                          height: 110,
-                          right: -20,
-                          bottom: 0,
-                          child: Image.asset(
-                            'assets/main_screen/MENU_Knowledge_02047.PNG',
-                          ),
-                        )
-                      ],
+                          fit: BoxFit.fill),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(14.0, 0, 14.0, 0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                  Positioned(
+                    bottom: 0,
+                    left: 50,
+                    top: 10,
+                    right: 0,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        //todo: skillView
-                        const Text(
-                          'Assustar',
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                        Container(
-                          height: 100,
-                          width: 80,
-                          color: Colors.black54,
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                height: 32,
-                                bottom: 4,
-                                child: Image.asset(
-                                  'assets/main_screen/dish.png',
-                                ),
-                              ),
-                              Positioned(
-                                height: 110,
-                                right: -20,
-                                bottom: 0,
-                                child: Image.asset(
-                                  'assets/main_screen/MENU_Knowledge_04018.PNG',
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
                         const SizedBox(
-                          height: 20,
+                          width: 20,
                         ),
-                        //todo: consumableView
-                        Container(
-                          height: 100,
-                          width: 80,
-                          color: Colors.black54,
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                height: 32,
-                                bottom: 4,
-                                child: Image.asset(
-                                  'assets/main_screen/dish.png',
-                                ),
-                              ),
-                              Positioned(
-                                height: 110,
-                                right: -20,
-                                bottom: 0,
-                                child: Image.asset(
-                                  'assets/main_screen/MENU_Knowledge_00007.PNG',
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      //todo: rightHandView
-                      Container(
-                        height: 100,
-                        width: 80,
-                        color: Colors.black54,
-                        child: Stack(
+                        Row(
                           children: [
-                            Positioned(
-                              height: 32,
-                              bottom: 4,
+                            SizedBox(
+                              height: 60,
+                              width: 60,
                               child: Image.asset(
-                                'assets/main_screen/dish.png',
+                                'assets/menu/equipament_icon.png',
                               ),
                             ),
-                            Positioned(
-                              height: 110,
-                              right: -20,
-                              bottom: 0,
-                              child: Image.asset(
-                                'assets/main_screen/MENU_Knowledge_01028.PNG',
-                              ),
+                            const SizedBox(
+                              width: 20,
+                            ),
+                            const Text(
+                              'Inventory',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20),
                             )
                           ],
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ],
               ),
-              Positioned(
-                bottom: 10,
-                left: size.width * 0.32,
-                child: const Text(
-                  'Frasco de Estus das Cinzas',
-                  style: TextStyle(color: Colors.white),
+            ),
+            Expanded(
+              flex: 6,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Stack(
+                  children: [
+                    const Positioned.fill(
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            fit: BoxFit.fill,
+                            image: AssetImage(
+                              'assets/menu/high_menu.png',
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            color: Colors.black26,
+                            child: const EquipamentItemsView(),
+                          ),
+                        ),
+                        Expanded(
+                          child: Consumer<InventoryManager>(
+                            builder: (context, value, child) {
+                              if (value.selectedItem == null) {
+                                return DecoratedBox(
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      fit: BoxFit.fill,
+                                      image: AssetImage(background),
+                                    ),
+                                  ),
+                                );
+                              } else {
+                                return DetailConsumableTile(
+                                  item: value.selectedItem as Consumable,
+                                );
+                              }
+                            },
+                          ),
+                        ),
+                        const Expanded(
+                          child: InventoryStatusView(),
+                        ),
+                      ],
+                    )
+                  ],
                 ),
               ),
-              Positioned(
-                bottom: size.height * 0.15,
-                left: size.width * 0.60,
-                child: Container(
-                  height: 30,
-                  width: 20,
-                  color: Colors.white,
-                ),
-              ),
-            ],
-          ),
-        );
-      },
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

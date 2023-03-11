@@ -6,13 +6,17 @@ import 'package:flutter/material.dart';
 class InventoryManager extends ChangeNotifier {
   bool isLoaded = false;
   int selectedTab = 0;
-  dynamic selectedItem;
+  List<Item> inventory = [];
+
+  Item? selectedItem;
 
   final List<Consumable> consumables = [];
   final List<Weapon> weapons = [];
   final List<Shield> shields = [];
   final List<Spell> spells = [];
   final mockService = MockhItemsService();
+  Map equipament = {};
+
   List<String> categoryImage = [
     "assets/items/category/consumable.png",
     "assets/items/category/weapons.png",
@@ -34,6 +38,7 @@ class InventoryManager extends ChangeNotifier {
     weapons.addAll(weaponsList);
     shields.addAll(shieldsList);
     spells.addAll(spellsList);
+
     isLoaded = true;
     notifyListeners();
   }
@@ -55,6 +60,14 @@ class InventoryManager extends ChangeNotifier {
 
   void showShield(Shield item) {
     selectedItem = item;
+    notifyListeners();
+  }
+
+  void addItemToIventory(Item item) {
+    if (inventory.contains(item)) {
+      return;
+    }
+    inventory.add(item);
     notifyListeners();
   }
 

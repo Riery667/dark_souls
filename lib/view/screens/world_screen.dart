@@ -1,5 +1,4 @@
 import 'package:dark_souls/models/models.dart';
-import 'package:dark_souls/view/equipament_view.dart';
 import 'package:dark_souls/view/menu_view.dart';
 import 'package:dark_souls/view/souls_view.dart';
 import 'package:dark_souls/view/status_view.dart';
@@ -39,7 +38,7 @@ class WorldScreen extends StatelessWidget {
               bottom: 10,
               height: size.height * 0.38,
               width: size.width * 0.23,
-              child: const EquipamentView(),
+              child: const SizedBox.shrink(),
             ),
             //todo: CountSoulsView
             Positioned(

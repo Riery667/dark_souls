@@ -31,17 +31,20 @@ class ItemsGridVIew extends StatelessWidget {
                     crossAxisCount: 4),
                 itemCount: 5,
                 itemBuilder: (context, index) {
-                  const mockServiceLoaded = true;
-
-                  if (value.isLoaded == mockServiceLoaded) {
+                  if (value.isLoaded) {
                     //CONSUMABLES
                     if (value.selectedTab == 0) {
                       return GestureDetector(
                         onTap: () {
                           value.showConsumable(value.consumables[index]);
                         },
+                        onDoubleTap: () {
+                          value.addItemToIventory(value.consumables[index]);
+                        },
                         child: ItemTile(
                           itemImage: value.consumables[index].image,
+                          isSelected:
+                              value.selectedItem == value.consumables[index],
                         ),
                       );
 

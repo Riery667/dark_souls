@@ -1,8 +1,11 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 class ItemTile extends StatelessWidget {
-  String itemImage;
-  ItemTile({super.key, required this.itemImage});
+  final String itemImage;
+  final bool? isSelected;
+  const ItemTile({Key? key, required this.itemImage, this.isSelected})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +23,18 @@ class ItemTile extends StatelessWidget {
               ),
             ),
           ),
+          if (isSelected == true)
+            const Positioned.fill(
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                      "assets/menu/selected_item.png",
+                    ),
+                  ),
+                ),
+              ),
+            ),
           Center(
             child: SizedBox(
               height: 80,
