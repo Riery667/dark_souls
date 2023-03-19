@@ -1,4 +1,8 @@
+import 'package:dark_souls/components/right_hand_tile.dart';
+import 'package:dark_souls/components/right_hand_tile_null.dart';
+import 'package:dark_souls/models/inventory_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class EquipamentItemsView extends StatelessWidget {
   static String background = "assets/menu/inventory_background.png";
@@ -11,19 +15,6 @@ class EquipamentItemsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Color> colors = [
-      Colors.red,
-      Colors.black38,
-      Colors.blue,
-      Colors.pink,
-      Colors.green,
-      Colors.white,
-      Colors.black38,
-      Colors.blue,
-      Colors.pink,
-      Colors.green,
-      Colors.white
-    ];
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Stack(
@@ -70,109 +61,114 @@ class EquipamentItemsView extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: SizedBox(
                           height: 95,
-                          width: 500,
-                          child: ListView.separated(
-                            scrollDirection: Axis.horizontal,
-                            itemCount: colors.length - 8,
-                            separatorBuilder: (context, index) =>
-                                const Padding(padding: EdgeInsets.all(8)),
-                            itemBuilder: (context, index) => const SizedBox(
-                              height: 95,
-                              width: 75,
-                              child: DecoratedBox(
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    fit: BoxFit.fill,
-                                    image: AssetImage(
-                                        "assets/menu/right_hand_slot.png"),
-                                  ),
-                                ),
-                              ),
-                            ),
+                          child: Consumer<InventoryManager>(
+                            builder: (context, value, child) {
+                              return ListView.separated(
+                                scrollDirection: Axis.horizontal,
+                                itemCount: value.rightHandEquipament.length,
+                                separatorBuilder: (context, index) =>
+                                    const Padding(padding: EdgeInsets.all(8)),
+                                itemBuilder: (context, i) {
+                                  if (value.rightHandEquipament[i] == null) {
+                                    return const SizedBox(
+                                      width: 75,
+                                      child: RightHandTileNull(),
+                                    );
+                                  } else {
+                                    return SizedBox(
+                                      width: 75,
+                                      child: RightHandTile(
+                                          itemImage: value
+                                              .rightHandEquipament[i]!.image),
+                                    );
+                                  }
+                                },
+                              );
+                            },
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
-                        child: SizedBox(
-                          height: 95,
-                          width: 500,
-                          child: ListView.separated(
-                            scrollDirection: Axis.horizontal,
-                            itemCount: colors.length - 8,
-                            separatorBuilder: (context, index) =>
-                                const Padding(padding: EdgeInsets.all(8)),
-                            itemBuilder: (context, index) => const SizedBox(
-                              height: 95,
-                              width: 75,
-                              child: DecoratedBox(
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    fit: BoxFit.fill,
-                                    image: AssetImage(
-                                        "assets/menu/left_hand_slot.png"),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      const Expanded(
-                        child: SizedBox.shrink(),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: SizedBox(
-                          height: 95,
-                          width: 500,
-                          child: ListView.separated(
-                            scrollDirection: Axis.horizontal,
-                            itemCount: colors.length - 7,
-                            separatorBuilder: (context, index) =>
-                                const Padding(padding: EdgeInsets.all(8)),
-                            itemBuilder: (context, index) => const SizedBox(
-                              height: 95,
-                              width: 75,
-                              child: DecoratedBox(
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    fit: BoxFit.fill,
-                                    image: AssetImage(
-                                        "assets/menu/consumable_slot.png"),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
-                        child: SizedBox(
-                          height: 95,
-                          width: 500,
-                          child: ListView.separated(
-                            scrollDirection: Axis.horizontal,
-                            itemCount: colors.length - 7,
-                            separatorBuilder: (context, index) =>
-                                const Padding(padding: EdgeInsets.all(8)),
-                            itemBuilder: (context, index) => const SizedBox(
-                              height: 95,
-                              width: 75,
-                              child: DecoratedBox(
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    fit: BoxFit.fill,
-                                    image: AssetImage(
-                                        "assets/menu/consumable_slot.png"),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
+                      // Padding(
+                      //   padding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
+                      //   child: SizedBox(
+                      //     height: 95,
+                      //     width: 500,
+                      //     child: ListView.separated(
+                      //       scrollDirection: Axis.horizontal,
+                      //       itemCount: colors.length - 8,
+                      //       separatorBuilder: (context, index) =>
+                      //           const Padding(padding: EdgeInsets.all(8)),
+                      //       itemBuilder: (context, index) => const SizedBox(
+                      //         height: 95,
+                      //         width: 75,
+                      //         child: DecoratedBox(
+                      //           decoration: BoxDecoration(
+                      //             image: DecorationImage(
+                      //               fit: BoxFit.fill,
+                      //               image: AssetImage(
+                      //                   "assets/menu/left_hand_slot.png"),
+                      //             ),
+                      //           ),
+                      //         ),
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
+                      // const Expanded(
+                      //   child: SizedBox.shrink(),
+                      // ),
+                      // Padding(
+                      //   padding: const EdgeInsets.all(8.0),
+                      //   child: SizedBox(
+                      //     height: 95,
+                      //     width: 500,
+                      //     child: ListView.separated(
+                      //       scrollDirection: Axis.horizontal,
+                      //       itemCount: colors.length - 7,
+                      //       separatorBuilder: (context, index) =>
+                      //           const Padding(padding: EdgeInsets.all(8)),
+                      //       itemBuilder: (context, index) => const SizedBox(
+                      //         height: 95,
+                      //         width: 75,
+                      //         child: DecoratedBox(
+                      //           decoration: BoxDecoration(
+                      //             image: DecorationImage(
+                      //               fit: BoxFit.fill,
+                      //               image: AssetImage(
+                      //                   "assets/menu/consumable_slot.png"),
+                      //             ),
+                      //           ),
+                      //         ),
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
+                      // Padding(
+                      //   padding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
+                      //   child: SizedBox(
+                      //     height: 95,
+                      //     width: 500,
+                      //     child: ListView.separated(
+                      //       scrollDirection: Axis.horizontal,
+                      //       itemCount: colors.length - 7,
+                      //       separatorBuilder: (context, index) =>
+                      //           const Padding(padding: EdgeInsets.all(8)),
+                      //       itemBuilder: (context, index) => const SizedBox(
+                      //         height: 95,
+                      //         width: 75,
+                      //         child: DecoratedBox(
+                      //           decoration: BoxDecoration(
+                      //             image: DecorationImage(
+                      //               fit: BoxFit.fill,
+                      //               image: AssetImage(
+                      //                   "assets/menu/consumable_slot.png"),
+                      //             ),
+                      //           ),
+                      //         ),
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
                     ],
                   ),
                 ),

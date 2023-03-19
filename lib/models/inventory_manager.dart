@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 
 //Here, will pass all the data towards menu equipament
 class InventoryManager extends ChangeNotifier {
+  int position = 0;
   bool isLoaded = false;
   int selectedTab = 0;
-  List<Item> inventory = [];
+  List<Item?> rightHandEquipament = List.filled(3, null, growable: false);
 
   Item? selectedItem;
 
@@ -15,7 +16,6 @@ class InventoryManager extends ChangeNotifier {
   final List<Shield> shields = [];
   final List<Spell> spells = [];
   final mockService = MockhItemsService();
-  Map equipament = {};
 
   List<String> categoryImage = [
     "assets/items/category/consumable.png",
@@ -64,10 +64,14 @@ class InventoryManager extends ChangeNotifier {
   }
 
   void addItemToIventory(Item item) {
-    if (inventory.contains(item)) {
+    if (rightHandEquipament.contains(item)) {
       return;
     }
-    inventory.add(item);
+    rightHandEquipament[position] = item;
+    position++;
+    if (position == 3) {
+      position = 0;
+    }
     notifyListeners();
   }
 

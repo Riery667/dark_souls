@@ -54,6 +54,9 @@ class ItemsGridVIew extends StatelessWidget {
                         onTap: () {
                           value.showWeapon(value.weapons[index]);
                         },
+                        onDoubleTap: () {
+                          value.addItemToIventory(value.weapons[index]);
+                        },
                         child: ItemTile(
                           itemImage: value.weapons[index].image,
                         ),
@@ -65,6 +68,9 @@ class ItemsGridVIew extends StatelessWidget {
                         onTap: () {
                           value.showShield(value.shields[index]);
                         },
+                        onDoubleTap: () {
+                          value.addItemToIventory(value.shields[index]);
+                        },
                         child: ItemTile(
                           itemImage: value.shields[index].image,
                         ),
@@ -75,6 +81,9 @@ class ItemsGridVIew extends StatelessWidget {
                       return GestureDetector(
                         onTap: () {
                           value.showSpell(value.spells[index]);
+                        },
+                        onDoubleTap: () {
+                          value.addItemToIventory(value.spells[index]);
                         },
                         child: ItemTile(
                           itemImage: value.spells[index].image,

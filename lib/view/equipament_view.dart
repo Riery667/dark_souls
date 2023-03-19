@@ -1,6 +1,5 @@
-import 'package:dark_souls/components/detail_consumable_tile.dart';
-import 'package:dark_souls/models/consumable.dart';
-import 'package:dark_souls/models/inventory_manager.dart';
+import 'package:dark_souls/components/detail_weapon_tile.dart';
+import 'package:dark_souls/models/models.dart';
 import 'package:dark_souls/view/inventory_status_view.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -106,8 +105,8 @@ class EquipamentView extends StatelessWidget {
                                   ),
                                 );
                               } else {
-                                return DetailConsumableTile(
-                                  item: value.selectedItem as Consumable,
+                                return DetailWeaponTile(
+                                  weapon: value.selectedItem as Weapon,
                                 );
                               }
                             },
