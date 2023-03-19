@@ -1,3 +1,4 @@
+import 'package:dark_souls/view/equipament_view.dart';
 import 'package:dark_souls/view/inventory_view.dart';
 import 'package:flutter/material.dart';
 
@@ -25,6 +26,20 @@ class MenuView extends StatelessWidget {
                         'assets/menu/equipament_icon.png',
                       ),
                     ),
+                  ),
+                  child: GestureDetector(
+                    onTap: () {
+                      showGeneralDialog(
+                        barrierDismissible: true,
+                        barrierLabel: 'equipament',
+                        context: context,
+                        pageBuilder: (context, animation, secondaryAnimation) {
+                          return const Center(
+                            child: EquipamentView(),
+                          );
+                        },
+                      );
+                    },
                   ),
                 ),
               ),

@@ -31,17 +31,20 @@ class ItemsGridVIew extends StatelessWidget {
                     crossAxisCount: 4),
                 itemCount: 5,
                 itemBuilder: (context, index) {
-                  const mockServiceLoaded = true;
-
-                  if (value.isLoaded == mockServiceLoaded) {
+                  if (value.isLoaded) {
                     //CONSUMABLES
                     if (value.selectedTab == 0) {
                       return GestureDetector(
                         onTap: () {
                           value.showConsumable(value.consumables[index]);
                         },
+                        onDoubleTap: () {
+                          value.addItemToIventory(value.consumables[index]);
+                        },
                         child: ItemTile(
                           itemImage: value.consumables[index].image,
+                          isSelected:
+                              value.selectedItem == value.consumables[index],
                         ),
                       );
 
@@ -50,6 +53,9 @@ class ItemsGridVIew extends StatelessWidget {
                       return GestureDetector(
                         onTap: () {
                           value.showWeapon(value.weapons[index]);
+                        },
+                        onDoubleTap: () {
+                          value.addItemToIventory(value.weapons[index]);
                         },
                         child: ItemTile(
                           itemImage: value.weapons[index].image,
@@ -62,6 +68,9 @@ class ItemsGridVIew extends StatelessWidget {
                         onTap: () {
                           value.showShield(value.shields[index]);
                         },
+                        onDoubleTap: () {
+                          value.addItemToIventory(value.shields[index]);
+                        },
                         child: ItemTile(
                           itemImage: value.shields[index].image,
                         ),
@@ -72,6 +81,9 @@ class ItemsGridVIew extends StatelessWidget {
                       return GestureDetector(
                         onTap: () {
                           value.showSpell(value.spells[index]);
+                        },
+                        onDoubleTap: () {
+                          value.addItemToIventory(value.spells[index]);
                         },
                         child: ItemTile(
                           itemImage: value.spells[index].image,

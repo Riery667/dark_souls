@@ -2,9 +2,7 @@ import 'package:dark_souls/components/detail_consumable_tile.dart';
 import 'package:dark_souls/components/detail_shield_tile.dart';
 import 'package:dark_souls/components/detail_speel_tile.dart';
 import 'package:dark_souls/components/detail_weapon_tile.dart';
-import 'package:dark_souls/icons_assets.dart';
 import 'package:dark_souls/models/models.dart';
-import 'package:dark_souls/models/spell.dart';
 import 'package:dark_souls/view/inventory_items_view.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -115,28 +113,27 @@ class InventoryView extends StatelessWidget {
                                 if (value.selectedItem.runtimeType ==
                                     Consumable) {
                                   return DetailConsumableTile(
-                                      item: value.selectedItem);
+                                    item: value.selectedItem as Consumable,
+                                  );
                                 } else if (value.selectedItem.runtimeType ==
                                     Weapon) {
                                   return DetailWeaponTile(
-                                    weapon: value.selectedItem,
+                                    weapon: value.selectedItem as Weapon,
                                   );
                                 } else if (value.selectedItem.runtimeType ==
                                     Shield) {
                                   return DetailShieldTile(
-                                      shield: value.selectedItem);
+                                      shield: value.selectedItem as Shield);
                                 } else if (value.selectedItem.runtimeType ==
                                     Spell) {
                                   return DetailSpellTile(
-                                      spell: value.selectedItem);
+                                      spell: value.selectedItem as Spell);
                                 } else {
-                                  return Positioned.fill(
-                                    child: DecoratedBox(
-                                      decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                          fit: BoxFit.fill,
-                                          image: AssetImage(background),
-                                        ),
+                                  return DecoratedBox(
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        fit: BoxFit.fill,
+                                        image: AssetImage(background),
                                       ),
                                     ),
                                   );
