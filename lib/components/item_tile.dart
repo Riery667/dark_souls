@@ -1,14 +1,24 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:dark_souls/models/inventory_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ItemTile extends StatelessWidget {
   final String itemImage;
   final bool? isSelected;
-  const ItemTile({Key? key, required this.itemImage, this.isSelected})
+  final bool? isEquiped;
+  final bool? hasPosition;
+  const ItemTile(
+      {Key? key,
+      required this.itemImage,
+      this.isSelected,
+      this.isEquiped,
+      this.hasPosition})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final inventory = Provider.of<InventoryManager>(context, listen: false);
     return SizedBox(
       child: Stack(
         children: [
@@ -23,6 +33,22 @@ class ItemTile extends StatelessWidget {
               ),
             ),
           ),
+          // if (hasPosition == true)
+          //   Positioned(
+          //     top: 0,
+          //     left: 40,
+          //     child: Text(
+          //       inventory.rightHandEquipament[inventory.position].toString(),
+          //     ),
+          //   ),
+          if (isEquiped == true)
+            Positioned(
+              top: 0,
+              left: 0,
+              child: Image.asset(
+                "assets/menu/icon_equiped.png",
+              ),
+            ),
           if (isSelected == true)
             const Positioned.fill(
               child: DecoratedBox(
