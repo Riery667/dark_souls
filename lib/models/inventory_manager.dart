@@ -63,15 +63,16 @@ class InventoryManager extends ChangeNotifier {
     notifyListeners();
   }
 
-  void addItemToIventory(Item item) {
+  void addItemToInventory(Item item) {
     if (rightHandEquipament.contains(item)) {
       return;
     }
     rightHandEquipament[position] = item;
-    position++;
-    if (position == 3) {
-      position = 0;
-    }
+    notifyListeners();
+  }
+
+  void removeItemOfInventory(Item item) {
+    rightHandEquipament[position] = null;
     notifyListeners();
   }
 
